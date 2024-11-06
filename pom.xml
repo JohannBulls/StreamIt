@@ -34,6 +34,11 @@
             <artifactId>quarkus-resteasy</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-resteasy-jackson</artifactId>
+        </dependency>
+
         <!-- Quarkus JPA with Panache for data persistence -->
         <dependency>
             <groupId>io.quarkus</groupId>

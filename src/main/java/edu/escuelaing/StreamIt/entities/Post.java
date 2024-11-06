@@ -12,7 +12,7 @@ public class Post {
     private Long id;
 
     @ManyToOne
-    private User author;
+    private UserEntity author;
 
     @Size(max = 140)
     private String content;
@@ -33,11 +33,11 @@ public class Post {
         this.id = id;
     }
 
-    public User getAuthor() {
+    public UserEntity getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(UserEntity author) {
         this.author = author;
     }
 

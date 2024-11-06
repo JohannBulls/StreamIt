@@ -1,7 +1,7 @@
 package edu.escuelaing.StreamIt.controllers;
 
 import edu.escuelaing.StreamIt.entities.Post;
-import edu.escuelaing.StreamIt.entities.User;
+import edu.escuelaing.StreamIt.entities.UserEntity;
 import edu.escuelaing.StreamIt.repositories.PostRepository;
 import edu.escuelaing.StreamIt.repositories.UserRepository;
 import jakarta.inject.Inject;
@@ -29,7 +29,7 @@ public class PostController {
     @POST
     @Transactional
     public Post createPost(Post post, @QueryParam("userId") Long userId) {
-        User author = userRepository.findById(userId);
+        UserEntity author = userRepository.findById(userId);
         post.setAuthor(author);
         postRepository.persist(post);
         return post;

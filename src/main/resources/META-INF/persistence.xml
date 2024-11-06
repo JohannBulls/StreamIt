@@ -5,7 +5,8 @@
              version="3.0">
     <persistence-unit name="default" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
+        <class>edu.escuelaing.StreamIt.entities.UserEntity</class>
+        <class>edu.escuelaing.StreamIt.entities.Post</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:streamit_db;DB_CLOSE_DELAY=-1"/>
             <property name="jakarta.persistence.jdbc.user" value="sa"/>
