@@ -30,9 +30,9 @@ public class UserController {
     @Transactional
     public Response createUser(UserEntity user) {
         userRepository.persist(user);
-        cognitoService.createUser(user.getName(), user.getEmail(), user.getPassword());
-        String JwtToken = cognitoService.authenticateUser(user.getEmail(), user.getPassword());
-        return Response.ok(new AuthResponse(JwtToken)).build();
+//        cognitoService.createUser(user.getName(), user.getEmail(), user.getPassword());
+//        String JwtToken = cognitoService.authenticateUser(user.getEmail(), user.getPassword());
+        return Response.ok(user).build();
     }
 
     @GET

@@ -20,10 +20,8 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
     event.preventDefault();
 
     const email = document.getElementById("loginEmail").value;
-    console.log("Email:", email);
     const password = document.getElementById("loginPassword").value;
-    console.log("Password:", password);
-    const response = await fetch(`${BASE_URL}/users/auth/login`, {
+    const response = await fetch(`${BASE_URL}/users/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email, password: password })

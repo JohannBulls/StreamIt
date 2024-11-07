@@ -29,7 +29,6 @@ public class CognitoService {
                     AttributeType.builder().name("email").value(email).build(),
                     AttributeType.builder().name("phone_number").value("+57312564789").build()
             )
-
         );
     }
 
@@ -47,6 +46,19 @@ public class CognitoService {
         AdminInitiateAuthResponse authResponse = cognitoClient.adminInitiateAuth(authRequest);
 
         return authResponse.authenticationResult().idToken();  // El JWT
+    }
+
+    public String loginUser(String username, String password) {
+        AdminInitiateAuthRequest authRequest = AdminInitiateAuthRequest.builder()
+                .authFlow(AuthFlowType.ADMIN_NO_SRP_AUTH)
+                .clientId("j1gakm7ngpdf5cu8eor8c8g8o") // Cognito App Client ID
+                .userPoolId("us-east-1_6N20v59bv") // Cognito User Pool ID
+                .authParameters(Map.of("USERNAME", username, "PASSWORD", password))
+                .build();
+
+        AdminInitiateAuthResponse authResponse = cognitoClient.adminInitiateAuth(authRequest);
+
+        return authResponse.authenticationResult().idToken(); // Token para acceder a las APIs protegidas
     }
 }
 
