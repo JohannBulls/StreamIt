@@ -121,6 +121,8 @@ The application follows a monolithic architecture in the initial setup with Quar
 - **Microservices**: User, Post, and Stream services deployed independently on Lambda.
 ## Project Structure
 
+![image](https://github.com/user-attachments/assets/fedc8b1c-f80c-43a9-9edb-117f9b89143f)
+
 
 
 ## License
