@@ -22,7 +22,14 @@ public class UserEntity {
     @NotBlank
     private String password;
 
-    // Getters y Setters
+    @NotBlank
+    @Column(name = "role")
+    private String role;
+
+    @PrePersist
+    public void prePersist() {
+        role = "ROLE_USER";
+    }
 
     public Long getId() {
         return id;
@@ -38,6 +45,14 @@ public class UserEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public @NotBlank String getRole() {
+        return role;
+    }
+
+    public void setRole(@NotBlank String role) {
+        this.role = role;
     }
 
     public String getEmail() {
